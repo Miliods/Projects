@@ -1,5 +1,6 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.types.web_app_info import WebAppInfo
+
 language = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="🇷🇺 Русский"), KeyboardButton(text="🇺🇿 O'zbekcha"), KeyboardButton(text="🇺🇸 English")]
 ], resize_keyboard=True)
@@ -230,6 +231,266 @@ product32_keyboard = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product32"),
      InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product32")]
 ], resize_keyboard=True)
+
+product33_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product33"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product33")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product33"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product33")]
+], resize_keyboard=True)
+
+product34_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product34"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product34")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product34"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product34")]
+], resize_keyboard=True)
+
+product35_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product35"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product35")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product35"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product35")]
+], resize_keyboard=True)
+
+product36_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product36"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product36")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product36"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product36")]
+], resize_keyboard=True)
+
+product37_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product37"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product37")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product37"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product37")]
+], resize_keyboard=True)
+
+product38_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product38"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product38")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product38"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product38")]
+], resize_keyboard=True)
+
+product39_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product39"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product39")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product39"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product39")]
+], resize_keyboard=True)
+
+product40_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product40"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product40")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product40"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product40")]
+], resize_keyboard=True)
+
+product41_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product41"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product41")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product41"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product41")]
+], resize_keyboard=True)
+
+product42_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product42"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product42")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product42"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product42")]
+], resize_keyboard=True)
+
+product43_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product43"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product43")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product43"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product43")]
+], resize_keyboard=True)
+
+product44_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product44"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product44")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product44"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product44")]
+], resize_keyboard=True)
+
+product45_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product45"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product45")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product45"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product45")]
+], resize_keyboard=True)
+
+product46_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product46"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product46")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product46"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product46")]
+], resize_keyboard=True)
+
+product47_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product47"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product47")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product47"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product47")]
+], resize_keyboard=True)
+
+product48_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product48"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product48")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product48"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product48")]
+], resize_keyboard=True)
+
+product49_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product49"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product49")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product49"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product49")]
+], resize_keyboard=True)
+
+product50_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product50"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product50")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product50"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product50")]
+], resize_keyboard=True)
+
+product51_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product51"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product51")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product51"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product51")]
+], resize_keyboard=True)
+
+product52_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product52"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product52")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product52"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product52")]
+], resize_keyboard=True)
+
+product53_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product53"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product53")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product53"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product53")]
+], resize_keyboard=True)
+
+product54_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product54"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product54")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product54"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product54")]
+], resize_keyboard=True)
+
+product55_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product55"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product55")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product55"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product55")]
+], resize_keyboard=True)
+
+product56_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product56"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product56")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product56"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product56")]
+], resize_keyboard=True)
+
+product57_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product57"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product57")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product57"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product57")]
+], resize_keyboard=True)
+
+product58_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product58"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product58")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product58"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product58")]
+], resize_keyboard=True)
+
+product59_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product59"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product59")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product59"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product59")]
+], resize_keyboard=True)
+
+product60_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product60"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product60")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product60"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product60")]
+], resize_keyboard=True)
+
+product61_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product61"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product61")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product61"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product61")]
+], resize_keyboard=True)
+
+product62_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product62"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product62")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product62"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product62")]
+], resize_keyboard=True)
+
+product63_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product63"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product63")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product63"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product63")]
+], resize_keyboard=True)
+
+product64_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product64"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product64")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product64"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product64")]
+], resize_keyboard=True)
+
+product65_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product65"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product65")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product65"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product65")]
+], resize_keyboard=True)
+
+product66_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product66"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product66")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product66"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product66")]
+], resize_keyboard=True)
+
+product67_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product67"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product67")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product67"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product67")]
+], resize_keyboard=True)
+
+product68_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product68"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product68")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product68"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product68")]
+], resize_keyboard=True)
+
+product69_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="+", callback_data="add_Product69"),
+     InlineKeyboardButton(text="-", callback_data="remove_Product69")],
+    [InlineKeyboardButton(text="Избранные ❤️", callback_data="add_Favorites_Product69"),
+     InlineKeyboardButton(text="Корзина 🛍", callback_data="add_Basket_Product69")]
+], resize_keyboard=True)
+
 # Русский
 home_ru = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="Каталог товаров 🗂"), KeyboardButton(text="Корзина 🛍")],
@@ -250,7 +511,7 @@ payment_ru = ReplyKeyboardMarkup(keyboard=[
 
 location_ru = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="Мой локация 📍", request_location=True)]
-],resize_keyboard=True)
+], resize_keyboard=True)
 
 cash_ru = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="Отменить ❌"), KeyboardButton(text="Подтвердить ✅")],
@@ -282,6 +543,159 @@ catalog_ru = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text='⬅️ Назад')]
 ], resize_keyboard=True)
 
+electrical_goods_ru = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматические выключатели модульные")],
+    [KeyboardButton(text="Автоматический ввод резерва (АВР)")],
+    #  KeyboardButton(text="Электромагнитный клапан")],
+    # [KeyboardButton(text="Вентиляторы охлаждения")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+cooling_fans = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Вентиляторы и кулеры"), KeyboardButton(text="Решетки для кулера")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+fans_coolers = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Вентилятор охлаждения FP20060 AC220/240V")],
+    [KeyboardButton(text="Вентилятор охлаждения FP-108 AC220/240V")],
+    [KeyboardButton(text="Вентилятор охлаждения DS1751ABNL AC220/240V")],
+    [KeyboardButton(text="Вентилятор охлаждения JQH 2123HSL AC220/240V")],
+    [KeyboardButton(text="Вентилятор охлаждения SF8025AT AC220/240V")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+cooler_grilles = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Решетка для вентиляции XT-807 420х180")],
+    [KeyboardButton(text="Решетка для вентиляции XT-804 204х204")],
+    [KeyboardButton(text="Решетка для вентиляции XT-803 148х148")],
+    [KeyboardButton(text="Решетка для вентиляции XT-801 116x116")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+avr = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический ввод резерва АВР XLDS-125/4P 100A")],
+    [KeyboardButton(text="Автоматический ввод резерва АВР XLDS-250/4P 250A")],
+    [KeyboardButton(text="Автоматический ввод резерва АВР XLDS-630/4P 630A")],
+    [KeyboardButton(text="Автоматический ввод резерва АВР XLDS-1000/4P 1000A")],
+    [KeyboardButton(text="Автоматический ввод резерва АВР XLDS-1600/4P 1600A")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+electro_clapn = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Электрический клапан US-15E2 220VAС")],
+    [KeyboardButton(text="Электромагнитный клапан 50мм 220V.")],
+    [KeyboardButton(text="Электрический клапан SLG5404-15E2 220VAC")],
+    [KeyboardButton(text="Электромагнитный клапан 40мм 220V.")],
+    [KeyboardButton(text="Электромагнитный клапан 32мм 220V")],
+    [KeyboardButton(text="Электромагнитный клапан 25мм 220V")],
+    [KeyboardButton(text="Катушка на электромагнитный клапан 220VAC/24VDC")],
+    [KeyboardButton(text="Электромагнитный клапан 20мм 220V")],
+    [KeyboardButton(text="Электромагнитный клапан 15мм 220V.")],
+    [KeyboardButton(text="Электромагнитный клапан 10мм 220V")],
+    [KeyboardButton(text="Электромагнитный клапан 8мм 220V.")],
+    [KeyboardButton(text="Электромагнитный клапан 6мм 220V.")],
+    [KeyboardButton(text="Катушка на электромагнитный клапан 220VAC/24VDC")],
+    [KeyboardButton(text='⬅️ Назад')]
+], reply_markup=True)
+
+firma = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="CHINT"), KeyboardButton(text="CNC")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+chint_and_cnc = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="1P-CHINT"), KeyboardButton(text="2P-CHINT"), KeyboardButton(text="3P-CHINT")],
+    # [KeyboardButton(text="1P-CNC"), KeyboardButton(text="2P-CNC"), KeyboardButton(text="3P-CNC")],
+    [KeyboardButton(text='⬅️ Назад')]
+], resize_keyboard=True)
+
+chint_1p = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 1A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 2A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 3A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 4A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 6A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 10A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 16A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 25A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 32A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 40A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 50A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 1P 63A 6кА х-ка С")],
+    [KeyboardButton(text='⬅️ Назад')]
+], reply_markup=True)
+
+chint_2p = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 2A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 4A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 6A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 10A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 16A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 25A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 32A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 40A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 50A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 2P 63A 6кА х-ка С")],
+    [KeyboardButton(text='⬅️ Назад')]
+], reply_markup=True)
+
+chint_3p = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 2A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 4A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 6A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 10A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 16A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 25A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 32A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 40A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 50A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель NXB-63 3P 63A 6кА х-ка С")],
+    [KeyboardButton(text='⬅️ Назад')]
+], reply_markup=True)
+
+cnc_1p = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 1A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 2A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 4A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 6A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 10A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 16A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 20A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 25A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 32A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 40A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 50A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 1P 63A 6кА х-ка С")],
+    [KeyboardButton(text='⬅️ Назад')]
+])
+
+cnc_2p = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 2A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 6A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 10A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 16A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 25A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 32A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 40A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 50A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 2P 63A 6кА х-ка С")],
+    [KeyboardButton(text='⬅️ Назад')]
+])
+
+cnc_3p = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 2A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 6A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 10A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 16A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 25A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 32A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 40A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 50A 6кА х-ка С")],
+    [KeyboardButton(text="Автоматический выключатель YCB6-63H 3P 63A 6кА х-ка С")],
+    [KeyboardButton(text='⬅️ Назад')]
+])
+
 tool_ru = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="Пресс-клещи для втулочных наконечников"),
      KeyboardButton(text="Пресс-клещи для изолированных наконечников")],
@@ -311,17 +725,18 @@ air_gun_ru = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text='⬅️ Назад')]
 ], resize_keyboard=True)
 air_pressure_regulators_ru = ReplyKeyboardMarkup(keyboard=[
-    [KeyboardButton(text="Реле давления HEP110"), KeyboardButton(text="Регулятор давления QTYH-15 40 бар 1/2")],
-    [KeyboardButton(text="Регулятор давления FRC-D/AOU-1/4-MINI с фильтром"),
-     KeyboardButton(text="Регулятор давления LFR-D/AOFR- 1/4-MINI")],
-    [KeyboardButton(text="Регулятор давления LR-D/AOR -1/2-MIDI Без фильтра"),
-     KeyboardButton(text="Регулятор давления LR-D/AOR - 1/4-MINI Без фильтра")],
-    [KeyboardButton(text="Регулятор давления AC 2010-02"),
-     KeyboardButton(text="Блок подготовки воздуха с регулятором давления BFC-4000")],
-    [KeyboardButton(text="Блок подготовки воздуха с регулятором давления AFC-2000"),
-     KeyboardButton(text="Фильтр влаготделитель с регулятором давления BFR-4000")],
-    [KeyboardButton(text="Фильтр влаготделитель с регулятором давления AFR-2000"),
-     KeyboardButton(text="Регулятор давления с манометром BR-4000")],
+    [KeyboardButton(text="Реле давления HEP110")],
+    [KeyboardButton(text="Регулятор давления QTYH-15 40 бар 1/2")],
+    [KeyboardButton(text="Регулятор давления FRC-D/AOU-1/4-MINI с фильтром")],
+    [KeyboardButton(text="Регулятор давления LFR-D/AOFR- 1/4-MINI")],
+    [KeyboardButton(text="Регулятор давления LR-D/AOR -1/2-MIDI Без фильтра")],
+    [KeyboardButton(text="Регулятор давления LR-D/AOR - 1/4-MINI Без фильтра")],
+    [KeyboardButton(text="Регулятор давления AC 2010-02")],
+    [KeyboardButton(text="Блок подготовки воздуха с регулятором давления BFC-4000")],
+    [KeyboardButton(text="Блок подготовки воздуха с регулятором давления AFC-2000")],
+    [KeyboardButton(text="Фильтр влаготделитель с регулятором давления BFR-4000")],
+    [KeyboardButton(text="Фильтр влаготделитель с регулятором давления AFR-2000")],
+    [KeyboardButton(text="Регулятор давления с манометром BR-4000")],
     [KeyboardButton(text="Регулятор давления с манометром AR-2000")],
     [KeyboardButton(text='⬅️ Назад')]
 ])

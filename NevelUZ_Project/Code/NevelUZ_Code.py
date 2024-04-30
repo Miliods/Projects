@@ -11,7 +11,18 @@ from NevelUZ_Keyboard import (language, home_ru, home_uz, home_en, catalog_ru, c
                               product24_keyboard, product25_keyboard, product26_keyboard, product27_keyboard,
                               product28_keyboard, product29_keyboard, product30_keyboard, product31_keyboard,
                               product32_keyboard, settings_ru, delivery_ru, payment_ru, click_ru, payme_ru, cash_ru,
-                              location_ru, webapp)
+                              location_ru, webapp, electrical_goods_ru, chint_1p, chint_2p, chint_3p,
+                              chint_and_cnc, cnc_2p, cnc_1p, cnc_3p, avr, electro_clapn, cooling_fans, fans_coolers,
+                              cooler_grilles, product33_keyboard, product34_keyboard, product35_keyboard,
+                              product36_keyboard, product37_keyboard, product38_keyboard, product39_keyboard,
+                              product40_keyboard, product41_keyboard, product42_keyboard, product43_keyboard,
+                              product44_keyboard, product45_keyboard, product46_keyboard, product47_keyboard,
+                              product48_keyboard, product49_keyboard, product50_keyboard, product51_keyboard,
+                              product52_keyboard, product53_keyboard, product54_keyboard, product55_keyboard,
+                              product56_keyboard, product57_keyboard, product58_keyboard, product59_keyboard,
+                              product60_keyboard, product61_keyboard, product62_keyboard, product63_keyboard,
+                              product64_keyboard, product65_keyboard, product66_keyboard, product67_keyboard,
+                              product68_keyboard, product69_keyboard)
 
 from aiogram.filters import CommandStart
 
@@ -22,7 +33,10 @@ from aiogram.types import FSInputFile
 from NevelUZ_Product import Product1, Product2, Product3, Product4, Product5, Product6, Product7, Product8, Product9, \
     Product10, Product11, Product12, Product13, Product14, Product15, Product16, Product17, Product18, Product19, \
     Product20, Product21, Product22, Product23, Product24, Product25, Product26, Product27, Product28, Product29, \
-    Product30, Product31, Product32
+    Product30, Product31, Product32, Product33, Product34, Product35, Product36, Product37, Product38, Product39, \
+    Product40, Product41, Product42, Product43, Product44, Product45, Product46, Product47, Product48, Product49, \
+    Product50, Product51, Product52, Product53, Product54, Product55, Product56, Product57, Product58, Product59, \
+    Product60, Product61, Product62, Product63, Product64, Product65, Product66, Product67, Product68, Product69
 from dotenv import load_dotenv
 import asyncio
 import os
@@ -53,7 +67,7 @@ async def starting_bot(message: types.Message):
 
 
 # Русский
-@dp.message(F.text.in_(["⬅️ Назад", "Отменить ❌"]))
+@dp.message(F.text.in_(["⬅️ Назад", "Отменить ❌", "/menu"]))
 async def ru_back(message: types.Message):
     await message.answer(
         "Нажмите на Каталог товаров 🗂, чтобы увидеть разнообразие товаров и добавить их в корзинку или в"
@@ -74,13 +88,13 @@ async def ru_greetings(message: types.Message):
                                reply_markup=home_ru)
 
 
-@dp.message(F.text == "Каталог товаров 🗂")
+@dp.message(F.text.in_(["Каталог товаров 🗂", "/catalog"]))
 async def ru_catalog(message: types.Message):
     await message.answer("Новый удобный каталог товаров", reply_markup=webapp)
     await message.answer("Выберите раздел", reply_markup=catalog_ru)
 
 
-@dp.message(F.text == "Избранные ❤️")
+@dp.message(F.text.in_(["Избранные ❤️", "/favorites"]))
 async def show_basket(message: types.Message):
     db_cursor.execute("SELECT * FROM favorites")
     favorites_items = db_cursor.fetchall()
@@ -100,7 +114,7 @@ async def show_basket(message: types.Message):
     await message.answer(response)
 
 
-@dp.message(F.text == "Корзина 🛍")
+@dp.message(F.text.in_(["Корзина 🛍", "/basket"]))
 async def show_basket(message: types.Message):
     db_cursor.execute("SELECT * FROM basket")
     basket_items = db_cursor.fetchall()
@@ -205,7 +219,7 @@ async def ru_click(message: types.Message):
     await message.answer(response, reply_markup=click_ru)
 
 
-@dp.message(F.text == "Настройки ⚙️")
+@dp.message(F.text.in_(["Настройки ⚙️", "/settings"]))
 async def ru_tool(message: types.Message):
     await message.answer("Выберите настройку", reply_markup=settings_ru)
 
@@ -223,6 +237,71 @@ async def ru_tool(message: types.Message):
 @dp.message(F.text == "Пневмооборудование")
 async def ru_pneumatic_equipment(message: types.Message):
     await message.answer("Выберите категорию пневмооборудование", reply_markup=pneumatic_equipment_ru)
+
+
+@dp.message(F.text == "Электротовары")
+async def ru_electrical_goods(message: types.Message):
+    await message.answer("Выберите категорию электротоваров", reply_markup=electrical_goods_ru)
+
+
+@dp.message(F.text == "Автоматические выключатели модульные")
+async def ru_chint(message: types.Message):
+    await message.answer("Выберите фазу 1-3 автоматического включателя", reply_markup=chint_and_cnc)
+
+
+@dp.message(F.text == "1P-CHINT")
+async def ru_chint(message: types.Message):
+    await message.answer("Выберите автоматические включатель", reply_markup=chint_1p)
+
+
+@dp.message(F.text == "2P-CHINT")
+async def ru_chint(message: types.Message):
+    await message.answer("Выберите автоматические включатель", reply_markup=chint_2p)
+
+
+@dp.message(F.text == "3P-CHINT")
+async def ru_chint(message: types.Message):
+    await message.answer("Выберите автоматические включатель", reply_markup=chint_3p)
+
+
+@dp.message(F.text == "1P-CNC")
+async def ru_cnc(message: types.Message):
+    await message.answer("Выберите автоматические включатель", reply_markup=cnc_1p)
+
+
+@dp.message(F.text == "2P-CNC")
+async def ru_cnc(message: types.Message):
+    await message.answer("Выберите автоматические включатель", reply_markup=cnc_2p)
+
+
+@dp.message(F.text == "3P-CNC")
+async def ru_cnc(message: types.Message):
+    await message.answer("Выберите автоматические включатель", reply_markup=cnc_3p)
+
+
+@dp.message(F.text == "Автоматический ввод резерва (АВР)")
+async def ru_cnc(message: types.Message):
+    await message.answer("Выберите автоматические ввод резерва (АВР)", reply_markup=avr)
+
+
+@dp.message(F.text == "Электромагнитный клапан")
+async def ru_cnc(message: types.Message):
+    await message.answer("Выберите электромагнитный клапан", reply_markup=electro_clapn)
+
+
+@dp.message(F.text == "Вентиляторы охлаждения")
+async def ru_cnc(message: types.Message):
+    await message.answer("Выберите вентиляторы охлаждения", reply_markup=cooling_fans)
+
+
+@dp.message(F.text == "Вентиляторы и кулеры")
+async def ru_fans_coolers(message: types.Message):
+    await message.answer("Выберите вентиляторы и кулеры", reply_markup=fans_coolers)
+
+
+@dp.message(F.text == "Решетки для кулера")
+async def ru_cooler_grilles(message: types.Message):
+    await message.answer("Выберите решетки для кулера", reply_markup=cooler_grilles)
 
 
 @dp.message(F.text == "Гидрораспределитель")
@@ -450,6 +529,228 @@ async def send_product_info(message: types.Message):
 async def send_product_info(message: types.Message):
     msg, photo = Product32.send_product_info()
     await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product32_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 1A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product33.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product33_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 2A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product34.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product34_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 3A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product35.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product35_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 4A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product36.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product36_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 6A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product37.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product37_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 10A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product38.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product38_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 16A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product39.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product39_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 25A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product40.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product40_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 32A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product41.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product41_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 40A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product42.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product42_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 50A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product43.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product43_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 1P 63A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product44.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product44_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 2A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product45.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product45_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 4A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product46.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product46_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 6A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product47.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product47_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 10A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product48.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product48_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 16A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product49.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product49_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 25A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product50.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product50_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 32A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product51.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product51_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 40A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product52.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product52_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 50A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product53.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product53_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 2P 63A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product54.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product54_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 2A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product55.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product55_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 4A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product56.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product56_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 6A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product57.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product57_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 10A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product58.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product58_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 16A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product59.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product59_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 25A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product60.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product60_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 32A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product61.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product61_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 40A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product62.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product62_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 50A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product63.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product63_keyboard)
+
+
+@dp.message(F.text == "Автоматический выключатель NXB-63 3P 63A 6кА х-ка С")
+async def send_product_info(message: types.Message):
+    msg, photo = Product64.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product64_keyboard)
+
+
+@dp.message(F.text == "Автоматический ввод резерва АВР XLDS-630/4P 630A")
+async def send_product_info(message: types.Message):
+    msg, photo = Product65.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product65_keyboard)
+
+
+@dp.message(F.text == "Автоматический ввод резерва АВР XLDS-250/4P 250A")
+async def send_product_info(message: types.Message):
+    msg, photo = Product66.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product66_keyboard)
+
+
+@dp.message(F.text == "Автоматический ввод резерва АВР XLDS-125/4P 100A")
+async def send_product_info(message: types.Message):
+    msg, photo = Product67.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product67_keyboard)
+
+
+@dp.message(F.text == "Автоматический ввод резерва АВР XLDS-1000/4P 1000A")
+async def send_product_info(message: types.Message):
+    msg, photo = Product68.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product68_keyboard)
+
+
+@dp.message(F.text == "Автоматический ввод резерва АВР XLDS-1600/4P 1600A")
+async def send_product_info(message: types.Message):
+    msg, photo = Product69.send_product_info()
+    await message.answer_photo(photo=FSInputFile(photo), caption=msg, reply_markup=product69_keyboard)
 
 
 # O'zbekcha
@@ -951,8 +1252,8 @@ async def add_quantity(callback: types.CallbackQuery):
     Product10.price += 633.100
 
     await callback.message.answer_photo(photo=FSInputFile(Product10.photo),
-                                        caption=f"{Product10.title}\n\n{Product10.description}\n\n{round(Product10.price
-                                                                                                         , 2)}00 "
+                                        caption=f"{Product10.title}\n\n{Product10.description}\n\n{round(
+                                            Product10.price, 2)}00 "
                                                 f"сум\n\nКоличество - {Product10.quantity} \n",
                                         reply_markup=product10_keyboard)
 
@@ -2044,6 +2345,822 @@ async def add_basket(message: types.Message):
             VALUES (?, ?, ?)
         """, ("Регулятор давления с манометром AR-2000",
               f"{Product32.price}00", Product32.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product33")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product33.quantity += 1
+    Product33.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product33.photo),
+                                        caption=f"{Product33.title}\n\n{Product33.description}\n\n{round(Product33.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product33.quantity} \n",
+                                        reply_markup=product33_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product33")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product33.quantity -= 1
+    Product33.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product33.photo),
+                                        caption=f"{Product33.title}\n\n{Product33.description}\n\n{round(Product33.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product33.quantity} \n",
+                                        reply_markup=product33_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product33')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 1A 6кА х-ка С",
+              f"{Product33.price}00", Product33.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product33')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 1A 6кА х-ка С",
+              f"{Product33.price}00", Product33.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product34")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product34.quantity += 1
+    Product34.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product34.photo),
+                                        caption=f"{Product34.title}\n\n{Product34.description}\n\n{round(Product34.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product34.quantity} \n",
+                                        reply_markup=product34_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product34")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product34.quantity -= 1
+    Product34.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product34.photo),
+                                        caption=f"{Product34.title}\n\n{Product34.description}\n\n{round(Product34.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product34.quantity} \n",
+                                        reply_markup=product34_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product34')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 2A 6кА х-ка С",
+              f"{Product34.price}00", Product34.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product34')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 2A 6кА х-ка С",
+              f"{Product34.price}00", Product34.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product35")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product35.quantity += 1
+    Product35.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product35.photo),
+                                        caption=f"{Product35.title}\n\n{Product35.description}\n\n{round(Product35.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product35.quantity} \n",
+                                        reply_markup=product35_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product35")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product35.quantity -= 1
+    Product35.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product35.photo),
+                                        caption=f"{Product35.title}\n\n{Product35.description}\n\n{round(Product35.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product35.quantity} \n",
+                                        reply_markup=product35_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product35')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 3A 6кА х-ка С",
+              f"{Product35.price}00", Product35.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product35')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 3A 6кА х-ка С",
+              f"{Product35.price}00", Product35.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product36")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product36.quantity += 1
+    Product36.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product36.photo),
+                                        caption=f"{Product36.title}\n\n{Product36.description}\n\n{round(Product36.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product36.quantity} \n",
+                                        reply_markup=product36_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product36")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product36.quantity -= 1
+    Product36.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product36.photo),
+                                        caption=f"{Product36.title}\n\n{Product36.description}\n\n{round(Product36.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product36.quantity} \n",
+                                        reply_markup=product36_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product36')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 4A 6кА х-ка С",
+              f"{Product36.price}00", Product36.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product36')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 4A 6кА х-ка С",
+              f"{Product36.price}00", Product36.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product37")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product37.quantity += 1
+    Product37.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product37.photo),
+                                        caption=f"{Product37.title}\n\n{Product37.description}\n\n{round(Product37.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product37.quantity} \n",
+                                        reply_markup=product37_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product37")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product37.quantity -= 1
+    Product37.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product37.photo),
+                                        caption=f"{Product37.title}\n\n{Product37.description}\n\n{round(Product37.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product37.quantity} \n",
+                                        reply_markup=product37_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product37')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 6A 6кА х-ка С",
+              f"{Product37.price}00", Product37.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product37')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 6A 6кА х-ка С",
+              f"{Product37.price}00", Product37.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product38")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product38.quantity += 1
+    Product38.price += 14.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product38.photo),
+                                        caption=f"{Product38.title}\n\n{Product38.description}\n\n{round(Product38.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product38.quantity} \n",
+                                        reply_markup=product38_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product38")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product38.quantity -= 1
+    Product38.price -= 14.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product38.photo),
+                                        caption=f"{Product38.title}\n\n{Product38.description}\n\n{round(Product38.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product38.quantity} \n",
+                                        reply_markup=product38_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product38')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 10A 6кА х-ка С",
+              f"{Product38.price}00", Product38.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product38')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 10A 6кА х-ка С",
+              f"{Product38.price}00", Product38.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product39")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product39.quantity += 1
+    Product39.price += 14.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product39.photo),
+                                        caption=f"{Product39.title}\n\n{Product39.description}\n\n{round(Product39.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product39.quantity} \n",
+                                        reply_markup=product39_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product39")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product39.quantity -= 1
+    Product39.price -= 14.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product39.photo),
+                                        caption=f"{Product39.title}\n\n{Product39.description}\n\n{round(Product39.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product39.quantity} \n",
+                                        reply_markup=product39_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product39')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 10A 6кА х-ка С",
+              f"{Product39.price}00", Product39.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product39')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 16A 6кА х-ка С",
+              f"{Product39.price}00", Product39.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product40")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product40.quantity += 1
+    Product40.price += 14.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product40.photo),
+                                        caption=f"{Product40.title}\n\n{Product40.description}\n\n{round(Product40.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product40.quantity} \n",
+                                        reply_markup=product40_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product40")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product40.quantity -= 1
+    Product40.price -= 14.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product40.photo),
+                                        caption=f"{Product40.title}\n\n{Product40.description}\n\n{round(Product40.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product40.quantity} \n",
+                                        reply_markup=product40_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product40')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 25A 6кА х-ка С",
+              f"{Product40.price}00", Product40.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product40')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 25A 6кА х-ка С",
+              f"{Product40.price}00", Product40.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product41")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product41.quantity += 1
+    Product41.price += 15.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product41.photo),
+                                        caption=f"{Product41.title}\n\n{Product41.description}\n\n{round(Product41.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product41.quantity} \n",
+                                        reply_markup=product41_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product41")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product41.quantity -= 1
+    Product41.price -= 15.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product41.photo),
+                                        caption=f"{Product41.title}\n\n{Product41.description}\n\n{round(Product41.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product41.quantity} \n",
+                                        reply_markup=product41_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product41')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 25A 6кА х-ка С",
+              f"{Product41.price}00", Product41.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product41')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 25A 6кА х-ка С",
+              f"{Product41.price}00", Product41.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product42")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product42.quantity += 1
+    Product42.price += 15.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product42.photo),
+                                        caption=f"{Product42.title}\n\n{Product42.description}\n\n{round(Product42.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product42.quantity} \n",
+                                        reply_markup=product42_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product42")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product42.quantity -= 1
+    Product42.price -= 15.300
+
+    await callback.message.answer_photo(photo=FSInputFile(Product42.photo),
+                                        caption=f"{Product42.title}\n\n{Product42.description}\n\n{round(Product42.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product42.quantity} \n",
+                                        reply_markup=product42_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product42')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 40A 6кА х-ка С",
+              f"{Product42.price}00", Product42.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product42')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 40A 6кА х-ка С",
+              f"{Product42.price}00", Product42.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product43")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product43.quantity += 1
+    Product43.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product43.photo),
+                                        caption=f"{Product43.title}\n\n{Product43.description}\n\n{round(Product43.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product43.quantity} \n",
+                                        reply_markup=product43_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product43")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product43.quantity -= 1
+    Product43.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product43.photo),
+                                        caption=f"{Product43.title}\n\n{Product43.description}\n\n{round(Product43.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product43.quantity} \n",
+                                        reply_markup=product43_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product43')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 50A 6кА х-ка С",
+              f"{Product43.price}00", Product43.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product43')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 50A 6кА х-ка С",
+              f"{Product43.price}00", Product43.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product44")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product44.quantity += 1
+    Product44.price += 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product44.photo),
+                                        caption=f"{Product44.title}\n\n{Product44.description}\n\n{round(Product44.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product44.quantity} \n",
+                                        reply_markup=product44_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product44")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product44.quantity -= 1
+    Product44.price -= 18.500
+
+    await callback.message.answer_photo(photo=FSInputFile(Product44.photo),
+                                        caption=f"{Product44.title}\n\n{Product44.description}\n\n{round(Product44.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product44.quantity} \n",
+                                        reply_markup=product44_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product44')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 63A 6кА х-ка С",
+              f"{Product44.price}00", Product44.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product44')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический выключатель NXB-63 1P 63A 6кА х-ка С",
+              f"{Product44.price}00", Product44.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product65")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product65.quantity += 1
+    Product65.price += 5080.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product65.photo),
+                                        caption=f"{Product65.title}\n\n{Product65.description}\n\n{round(Product65.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product65.quantity} \n",
+                                        reply_markup=product65_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product65")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product65.quantity -= 1
+    Product65.price -= 5080.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product65.photo),
+                                        caption=f"{Product65.title}\n\n{Product65.description}\n\n{round(Product65.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product65.quantity} \n",
+                                        reply_markup=product65_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product65')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-630/4P 630A",
+              f"{Product65.price}00", Product65.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product65')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-630/4P 630A",
+              f"{Product65.price}00", Product65.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product66")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product66.quantity += 1
+    Product66.price += 2540.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product66.photo),
+                                        caption=f"{Product66.title}\n\n{Product66.description}\n\n{round(Product66.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product66.quantity} \n",
+                                        reply_markup=product66_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product66")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product66.quantity -= 1
+    Product66.price -= 2540.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product66.photo),
+                                        caption=f"{Product66.title}\n\n{Product66.description}\n\n{round(Product66.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product66.quantity} \n",
+                                        reply_markup=product66_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product66')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-250/4P 250A",
+              f"{Product66.price}00", Product66.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product66')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-250/4P 250A",
+              f"{Product66.price}00", Product66.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product67")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product67.quantity += 1
+    Product67.price += 1270.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product67.photo),
+                                        caption=f"{Product67.title}\n\n{Product67.description}\n\n{round(Product67.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product67.quantity} \n",
+                                        reply_markup=product67_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product67")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product67.quantity -= 1
+    Product67.price -= 1270.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product67.photo),
+                                        caption=f"{Product67.title}\n\n{Product67.description}\n\n{round(Product67.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product67.quantity} \n",
+                                        reply_markup=product67_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product67')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-125/4P 100A",
+              f"{Product67.price}00", Product67.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product67')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-125/4P 100A",
+              f"{Product67.price}00", Product67.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product68")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product68.quantity += 1
+    Product68.price += 15748.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product68.photo),
+                                        caption=f"{Product68.title}\n\n{Product68.description}\n\n{round(Product68.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product68.quantity} \n",
+                                        reply_markup=product68_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product68")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product68.quantity -= 1
+    Product68.price -= 15748.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product68.photo),
+                                        caption=f"{Product68.title}\n\n{Product68.description}\n\n{round(Product68.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product68.quantity} \n",
+                                        reply_markup=product68_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product68')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-1000/4P 1000A",
+              f"{Product68.price}00", Product68.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product68')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-1000/4P 1000A",
+              f"{Product68.price}00", Product68.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Корзине 🛍")
+
+
+@dp.callback_query(F.data == "add_Product69")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product69.quantity += 1
+    Product69.price += 19050.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product69.photo),
+                                        caption=f"{Product69.title}\n\n{Product69.description}\n\n{round(Product69.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product69.quantity} \n",
+                                        reply_markup=product69_keyboard)
+
+
+@dp.callback_query(F.data == "remove_Product69")
+async def add_quantity(callback: types.CallbackQuery):
+    await callback.message.delete()
+    Product69.quantity -= 1
+    Product69.price -= 19050.000
+
+    await callback.message.answer_photo(photo=FSInputFile(Product69.photo),
+                                        caption=f"{Product69.title}\n\n{Product69.description}\n\n{round(Product69.price
+                                                                                                         , 2)}00 "
+                                                f"сум\n\nКоличество - {Product69.quantity} \n",
+                                        reply_markup=product69_keyboard)
+
+
+@dp.callback_query(F.data == 'add_Favorites_Product69')
+async def add_product(message: types.Message):
+    db_cursor.execute("""
+        INSERT INTO favorites (title, price, quantity)
+        VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-1600/4P 1600A",
+              f"{Product69.price}00", Product69.quantity))
+    db_connect.commit()
+    await message.answer("Продукт добавлен в Избранные ❤️")
+
+
+@dp.callback_query(F.data == 'add_Basket_Product69')
+async def add_basket(message: types.Message):
+    db_cursor.execute("""
+            INSERT INTO basket (title, price, quantity)
+            VALUES (?, ?, ?)
+        """, ("Автоматический ввод резерва АВР XLDS-1600/4P 1600A",
+              f"{Product69.price}00", Product69.quantity))
     db_connect.commit()
     await message.answer("Продукт добавлен в Корзине 🛍")
 
